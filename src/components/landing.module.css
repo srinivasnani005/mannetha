@@ -1,0 +1,226 @@
+/* * {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.btn {
+  text-align: right;
+  padding: 10px 20px;
+  font-size: 30px;
+  color: white;
+  background-color: rgba(48, 119, 157, 0.6); 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.8s ease;
+  animation: pulse 1s infinite alternate; 
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.btn:hover {
+  background-color: rgba(48, 119, 157, 0.6); 
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+  animation: none; 
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: absolute;
+  top: 20px;
+  left: 47.3%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.logo {
+  width: 100px; 
+  height: auto;
+  
+}
+
+.buttonContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center; 
+  align-items: flex-end; 
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: moveInFromLeft 3s ease-out forwards; 
+}
+
+
+
+@keyframes moveInFromLeft {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .btn {
+    padding: 8px 16px;
+    font-size: 20px; 
+  }
+
+  .logo {
+    width: 150px; 
+  }
+
+  .buttonContainer {
+    bottom: 20%; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .btn {
+    padding: 6px 12px;
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 120px; 
+  }
+
+  .buttonContainer {
+    bottom: 15%; 
+  }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+} */
+
+.overlayActive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Change color as needed */
+  z-index: 1;
+}
+
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px; /* Width of the vertical bar */
+  height: 100%;
+  background-color: #EB7E21;/* Transparent Green */
+  transition: left 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.sidebar:hover {
+  transform: translateX(20px); /* Move the bar a little when hovered */
+}
+
+.sidebar.open {
+  left: 100%; /* Sidebar slides out to the right */
+}
+
+.arrow {
+  font-size: 24px;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .arrow {
+    font-size: 20px; /* Smaller font size for arrow */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .arrow {
+    font-size: 16px; /* Even smaller font size for arrow */
+  }
+}
+
